@@ -8,19 +8,25 @@
        1.3.4 Device timezone
        1.3.5 Service routes
        1.3.6 Configure Source NAT from LAN to WAN (PAT)
-       1.3.7 Configure base security policy: allow any from LAN to WAN
-       1.3.8 Set up management profile to allow firewall management from host in internal network
+       1.3.7 Configure Source NAT from DMZ to WAN
+       1.3.8 Configure base security policy: allow any from LAN to WAN
+       1.3.9 Set up management profile to allow firewall management from host in internal network
    1.4 Switch SW1 – basic setup
        1.4.1 Clear switch config
        1.4.2 VLAN1 – 192.168.150.254/24 for remote management via SSH
        1.4.3 No port security at this stage
    1.5 Cable up physical network according to network diagram
    1.6 Palo Alto Firewall DHCP server
-   1.7 Test PA firewall and switch
+        1.6.1 LAN DHCP Server setup
+        1.6.2 DMZ DHCP Server setup
+   1.7 Palo Alto Firewall Interface setup
+        1.7.1 Sub-interface creation
+        1.7.2 VLAN Assignement
+   1.8 Test PA firewall and switch
        1.7.1 Check PC Internet connectivity
-       1.7.2 Telnet from your PC to the switch management IP
+       1.7.2 SSH from your PC to the switch management IP
        1.7.3 Verify inside-management-profile functionality
-   1.8 Time estimate: 24 hours
+   1.9 Time estimate: 24 hours
 
 2 Set up, configure and interconnect virtual environment, firewall, servers and client
    2.1 Install VirtualBox
@@ -31,21 +37,16 @@
        2.3.2 Update OS, services and apps from apt repository
        2.3.3 Set static IP
    2.4 Production network – connect Ubuntu Server to Palo Alto Firewall
-   2.5 Install Windows 10/11 clients
+   2.5 Install Windows 10/11 client
    2.6 Install and configure Windows Server 2022 domain controller
        2.6.1 Install Server 2022
        2.6.2 Promote server to domain controller
        2.6.3 Create a security group and user accounts
        2.6.4 Join Windows clients to domain
        2.6.5 Set up DNS on domain controller
-       2.6.6 Configure DHCP on Domain Controller (optional)
        2.6.7 Install Network Policy and Access Services (NPAS) role
        2.6.8 Register NPS in Active Directory
-       2.6.9 Configure RADIUS Authentication Policies
-       2.6.10 Configure RADIUS Accounting (optional)
-       2.6.11 Connect RADIUS to Firewall
-       2.6.12 Test RADIUS Authentication
-   2.7 Time estimate: 40 hours
+   2.7 Time estimate: 35 hours
 
 3 Configure Ubuntu Server for remote management (SSH, RDP, console)
    3.1 Remote management configuration
@@ -78,7 +79,7 @@
        5.5.2 Alerts
    5.6 Time estimate: 32 hours
 
-6 Integrate OPNsense firewall logs with Ubuntu Server Elastic Security SIEM
+6 Integrate Palo Alto firewall logs with Ubuntu Server Elastic Security SIEM
    6.1 OPNsense → SIEM log integration
    6.2 Time estimate: 8 hours
 
